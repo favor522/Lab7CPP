@@ -2,10 +2,15 @@
 #include <iostream>
 #include <Windows.h>
 
-struct Node {
-	Node* Next;
-	int Data;
+struct PNode {
+    int data;
+    PNode* next;
 };
 
+struct TStack {
+    PNode* Top;
+};
 
-bool StackCheck(Node* Top);
+int randSTop();
+bool StackIsEmpty(TStack& S);
+int Peek(TStack& S);

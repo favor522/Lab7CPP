@@ -7,8 +7,10 @@ LinkedMyNode* createList() {
 	return List;
 };
 LinkedMyNode* generatetheNumber(LinkedMyNode* List, int& Medium) {
-    int Sum = 0;
-    for (int i = 0; i < 3; ++i) {
+    int Num, Sum = 0;
+    std::cout << "¬ведите количество узлов, которое надо создать" << "\n";
+    std::cin >> Num;
+    for (int i = 0; i < Num; ++i) {
         MyNode* newMyNode = new MyNode;
         newMyNode->data = rand() % 30 + 1;
         Sum = Sum + newMyNode->data;
@@ -16,7 +18,7 @@ LinkedMyNode* generatetheNumber(LinkedMyNode* List, int& Medium) {
         List -> Begin = newMyNode;
     }
     Medium = Sum / 3;
-    std::cout << Medium << "\n";
+    std::cout << "—реднее значение: " << Medium << "\n";
     return List;
 }
 void printList(LinkedMyNode* List) {

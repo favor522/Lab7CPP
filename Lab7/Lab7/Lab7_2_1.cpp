@@ -1,18 +1,16 @@
 #include "Lab7_2.h"
+int randSTop() {
+    return rand() % 1 + 0;
+}
+bool StackIsEmpty(TStack& S) {
+    if (S.Top == nullptr) {
+        return TRUE;
+    }
+    else {
+        return FALSE;
+    }
+}
 
-//Node* createTStack() {
-struct TStack {
-	Node* Top = nullptr;
-};
-//return Node* Top;
-//}
-
-
-bool StackCheck(Node* Top) {
-	if (Top == nullptr) {
-		return true;
-	}
-	else {
-		return false;
-	}
+int Peek(TStack& S){
+    return S.Top->data;
 }

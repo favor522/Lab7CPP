@@ -1,6 +1,6 @@
 #include "Lab7_1.h"
 
-int main() {
+int main1() {
 	srand(time(0));
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
@@ -9,6 +9,5 @@ int main() {
 	printList(List);
 	deleteElement(List, Medium);
 	printList(List);
-	// I AM COOL VERY BIG BOSS!!!
 	return 0;
 }
