@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <random>
+#include <Windows.h>
 
 struct MyNode {
     int data;       
@@ -10,8 +11,9 @@ struct LinkedMyNode {
     MyNode* Begin;
     MyNode* End;
 };
-int count, Medium = 0;
+static int count, Medium = 0;
 
 LinkedMyNode* createList();
 LinkedMyNode* generatetheNumber(LinkedMyNode* List, int& Medium);
-void printList();
+void printList(LinkedMyNode* List);
+void deleteElement(LinkedMyNode* List, int& Medium);

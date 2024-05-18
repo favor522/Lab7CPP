@@ -1,6 +1,14 @@
 #include "Lab7_1.h"
 
-int main1() {
-	createList();
+int main() {
+	srand(time(0));
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	LinkedMyNode* List = createList();
+	generatetheNumber(List, Medium);
+	printList(List);
+	deleteElement(List, Medium);
+	printList(List);
+	// I AM COOL VERY BIG BOSS!!!
 	return 0;
 }

@@ -7,32 +7,48 @@ LinkedMyNode* createList() {
 	return List;
 };
 LinkedMyNode* generatetheNumber(LinkedMyNode* List, int& Medium) {
-    if (List == nullptr) {
-        std::cout << "Список был успешно создан, начинаем генерацию" << "\n";
-    }
-    else {
-        std::cout << "Ошибка в создании списка! Передайте ошмбку разработчику для её исправления" << "\n";
-    }
-    int List_lenght = rand() % 10 - 0;
     int Sum = 0;
-    MyNode* Begin = nullptr;
-    for (int i = 0; i < List_lenght; ++i) {
+    for (int i = 0; i < 3; ++i) {
         MyNode* newMyNode = new MyNode;
-        newMyNode->data = rand() % 30 - 0;
-        Sum =+ newMyNode->data;
-        count++;
-        newMyNode->next = Begin;
-        Begin = newMyNode;
+        newMyNode->data = rand() % 30 + 1;
+        Sum = Sum + newMyNode->data;
+        newMyNode->next = List ->Begin;
+        List -> Begin = newMyNode;
     }
-    Medium = Sum / count;
+    Medium = Sum / 3;
+    std::cout << Medium << "\n";
     return List;
 }
-void printList() {
-    MyNode* Begin = nullptr;
-    MyNode* current = Begin;
-    std::cout << "List elements: ";
+void printList(LinkedMyNode* List) {
+    auto current = List -> Begin;
+    std::cout << "Односвязный список: ";
     while (current != nullptr) {
         std::cout << current->data << " ";
         current = current->next;
+    }
+    std::cout << std::endl;
+    system("pause");
+}
+void deleteElement(LinkedMyNode* List, int& Medium) {
+    MyNode* current = List->Begin;
+    MyNode* prev = nullptr;
+    while (current != nullptr) {
+        if (current->data < Medium) {
+            std::cout << "Удалён элемент: " << current->data << std::endl;
+            if (prev == nullptr) {
+                List->Begin = current->next;
+            }
+            else {
+                prev->next = current->next;
+            }
+            MyNode* p = current;
+            current = current->next;
+            delete p;
+        }
+        else 
+        {
+            prev = current;
+            current = current->next;
+        }
     }
 }
