@@ -1,6 +1,6 @@
 #include "Lab7_2.h"
 int randSTop() {
-    return rand() % 1 + 0;
+    return rand() % 5 + 0;
 }
 bool StackIsEmpty(TStack& S) {
     if (S.Top == nullptr) {

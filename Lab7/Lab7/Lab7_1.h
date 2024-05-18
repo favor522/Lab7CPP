@@ -11,7 +11,7 @@ struct LinkedMyNode {
     MyNode* Begin;
     MyNode* End;
 };
-static int count, Medium = 0;
+static int count, Medium, Num = 0;
 
 LinkedMyNode* createList();
 LinkedMyNode* generatetheNumber(LinkedMyNode* List, int& Medium);

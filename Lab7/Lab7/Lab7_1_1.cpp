@@ -6,10 +6,12 @@ LinkedMyNode* createList() {
 	List->End = nullptr;
 	return List;
 };
+
 LinkedMyNode* generatetheNumber(LinkedMyNode* List, int& Medium) {
-    int Num, Sum = 0;
-    std::cout << "Введите количество узлов, которое надо создать" << "\n";
-    std::cin >> Num;
+    int Sum = 0;
+    std::cout << "Генерируем количество узлов..." << "\n";
+    int Num = rand() % 10 + 2;
+    std::cout << "Количество узлов: " << Num << "\n";
     for (int i = 0; i < Num; ++i) {
         MyNode* newMyNode = new MyNode;
         newMyNode->data = rand() % 30 + 1;
